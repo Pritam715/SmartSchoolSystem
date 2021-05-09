@@ -152,3 +152,10 @@ Route::group(['middleware' => ['auth','role:Student']], function () {
        Route::get('{id}/video/subjects/topic/file','StudentDataController@Videofile')->name('video.subject.topic.file'); 
       
 });
+
+
+
+Route::group(['middleware' => ['auth','role:Parent']], function () 
+{
+    Route::get('attendance/{attendance}', 'AttendanceController@show')->name('attendance.show');
+});

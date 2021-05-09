@@ -178,7 +178,7 @@ class StudentController extends Controller
             'current_address'   => $request->current_address,
             'permanent_address' => $request->permanent_address
         ]);
-          dd($student);
+        //   dd($student);
         return redirect()->route('student.index');
     }
 

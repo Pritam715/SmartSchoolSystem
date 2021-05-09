@@ -124,6 +124,7 @@ class AttendanceController extends Controller
      */
     public function show(Attendance $attendance)
     {
+      
         $attendances = Attendance::where('student_id',$attendance->id)->get();
 
         return view('backend.attendance.show', compact('attendances'));

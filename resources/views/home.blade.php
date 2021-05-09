@@ -19,9 +19,9 @@
         @include('dashboard.admin')
     @endrole
 
-    {{-- @role('Parent')
+    @role('Parent')
         @include('dashboard.parents')
-    @endrole --}}
+    @endrole
 
     @role('Teacher')
         @include('dashboard.teacher')

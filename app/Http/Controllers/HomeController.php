@@ -55,7 +55,13 @@ class HomeController extends Controller
             $subjects=Subject::where('class_id',$user->student->class_id)->get();
             return view('home', compact('student','subjects'));
 
-        } else {
+        } elseif($user->hasRole('Parent')) {
+            $parents = Parents::with(['children'])->withCount('children')->findOrFail($user->parent->id); 
+
+            return view('home', compact('parents'));
+        }
+        else
+        {
             return 'NO ROLE ASSIGNED YET!';
         }
         
